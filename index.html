@@ -1,0 +1,177 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Baby ❤️</title>
+
+<style>
+    body {
+        font-family: Arial;
+        background: #ffe6f2;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+    }
+
+    .box {
+        max-width: 600px;
+        margin: 40px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    input[type="password"], input[type="text"] {
+        width: 90%;
+        padding: 12px;
+        font-size: 16px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        margin-top: 10px;
+    }
+
+    button {
+        margin-top: 15px;
+        padding: 12px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 10px;
+        background: #ff6fa8;
+        color: white;
+        cursor: pointer;
+    }
+
+    img {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+</head>
+<body>
+
+<!-- LOGIN PAGE -->
+<div id="loginPage" class="box">
+    <h2>Login 💗</h2>
+    <p>Enter the password I told you baby 😘</p>
+    <input type="password" id="loginPass" placeholder="Password...">
+    <button onclick="checkLogin()">Login</button>
+    <p id="loginError" style="color:red; display:none;">Wrong password baby 💀</p>
+</div>
+
+<!-- NAME PAGE WITH TEDDY BEARS -->
+<div id="namePage" class="box hidden">
+    <h2>Baby what's your beautiful name? 💕</h2>
+    <img src="https://i.pinimg.com/originals/0d/0c/b7/0d0cb7482a1a2b775cdbc55d30a8023a.gif">
+    <input type="text" id="gfName" placeholder="Enter your name...">
+    <button onclick="goToLetter()">Next</button>
+</div>
+
+<!-- LETTER PAGE -->
+<div id="letterPage" class="box hidden">
+    <h2>For <span id="nameDisplay"></span> ❤️</h2>
+
+    <p id="letterText" style="text-align:left;">
+        hiiiiii my baby!!!!!! ❤️<br><br>
+
+        okay so sweetheart, we both have been going through a lot recently  
+        and i just wanna tell you that you're the best thing that has ever happened to me.  
+        i'll always be there for you, and i'll always love you no matter where life takes us.  
+        you'll always find me standing right next to you, supporting you through everything. 💗<br><br>
+
+        i just love you a lot my baby… you’ve illuminated my life and brought so much light into it  
+        just by being in it. and i just wanna thank you for everything you've done.  
+        words are truly not enough to show the amount of love i hold for you, my baby. 💞<br><br>
+
+        thank you so much for coming into my life, for making things better,  
+        for bringing my lost smile back, for loving me,  
+        and for always being there through my ups and downs.  
+        thank you for never leaving my side. 🧿✨️<br><br>
+
+        i love you a lot my baby, and you're everything i've ever asked for.  
+        i really couldn’t have asked for more, jaan… ❤️💋💞✨️
+    </p>
+
+    <button onclick="goToPhotos()">Next → Photos</button>
+</div>
+
+<!-- PHOTOS PAGE -->
+<div id="photosPage" class="box hidden">
+    <h2>Our Photos ❤️</h2>
+
+    <div id="photoGallery">
+        <img src="https://i.ibb.co/d0NwMKtn/Snapchat-939911125.jpg" style="margin: 10px 0;">
+    </div>
+
+    <button onclick="goToFuture()">Next → Future Letter</button>
+</div>
+</div>
+
+<!-- FUTURE LETTER PAGE -->
+<div id="futurePage" class="box hidden">
+    <h2>Our Beautiful Future ❤️</h2>
+
+    <p style="text-align:left;">
+        (hiiii my baby, so its 21th October 2039 right now, and we got married last night, we slept with each other for the very first time, no! not in a negative way thats for later-uhmmmm anywayssss baby we cuddles each other the entire night, we had such a long convo,it was so fun, we had netflix and chill till 3a.m. and then we went to bed, i kissed your forehead and you slowly kissed my lips then we both wrapped each other in our favourite 'phoolo waala kambal' and started cuddling each other, you held my head with your hands and pulled me closer to your neck, and then you kissed my hairs and hugged me as tightly as you can, i kissed your neck, looked in your eyes, and your eyes were sparkling, and then, we both whispered "i love you" while passing a really sweet smile and fell asleep. I am so happy right now, like i can finally call you mine for the rest of my life now, you'll be living with me, you'll be waking up right next to me, you'll sleep with me, we'll make dinner, lunch and breakfast together, we'll make coffee together, we can finally spend the rest of our lives living together with each other yayiiieeeeeee!!!!!! Baby, dating and falling in love with you was the best decision i've ever made ha no doubt we had to go through a lot, we fought a lot, we had to face a large number of misunderstandings, and sometimes it even brought our relationship on the verge of ending but at the end, we decided to choose and love each other again and give each other another chance, god was really testing us wasn't he? ufffffffff im so happy right now, i can finally tell people that you're my wifeee, we wont be needing to hide our smartphones from our parents anymore, bacha, it....the entire journey was very tough i agree but...., it was worth it, it truly was and now... we can finally spend the rest of our lives living and dying with each other...💗🥹🌷🎀  ) <br><br>
+                  </p>
+</div>
+
+<script>
+
+/* LOGIN CHECK */
+function checkLogin() {
+    let pass = document.getElementById("loginPass").value.trim().toLowerCase();
+    if (pass === "i love you my baby") {
+        document.getElementById("loginPage").classList.add("hidden");
+        document.getElementById("namePage").classList.remove("hidden");
+    } else {
+        document.getElementById("loginError").style.display = "block";
+    }
+}
+
+/* MOVE TO LETTER PAGE */
+function goToLetter() {
+    let name = document.getElementById("gfName").value.trim();
+    if (name === "") return;
+
+    document.getElementById("nameDisplay").innerText = name;
+
+    document.getElementById("namePage").classList.add("hidden");
+    document.getElementById("letterPage").classList.remove("hidden");
+}
+
+/* MOVE TO PHOTOS PAGE */
+function goToPhotos() {
+    document.getElementById("letterPage").classList.add("hidden");
+    document.getElementById("photosPage").classList.remove("hidden");
+}
+
+/* MOVE TO FUTURE LETTER */
+function goToFuture() {
+    document.getElementById("photosPage").classList.add("hidden");
+    document.getElementById("futurePage").classList.remove("hidden");
+}
+
+/* PHOTO CHOOSER PREVIEW */
+document.getElementById('photoInput').addEventListener('change', function(event) {
+    const files = event.target.files;
+    const gallery = document.getElementById('photoGallery');
+    gallery.innerHTML = "";
+
+    for (let i = 0; i < files.length; i++) {
+        const img = document.createElement("img");
+        img.src = URL.createObjectURL(files[i]);
+        img.style.margin = "10px 0";
+        gallery.appendChild(img);
+    }
+});
+</script>
+
+</body>
+</html>
+	
